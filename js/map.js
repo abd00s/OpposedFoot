@@ -1,22 +1,26 @@
 var map;
 var oppMap;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('search-map'), {
-//     center: {lat: -34.397, lng: 150.644},
-//     zoom: 8
-//   });
-//   oppMap = new google.maps.Map(document.getElementById('opp-map'), {
-//     center: {lat: -34.397, lng: 150.644},
-//     zoom: 8
-//   });
-// }
+
+var autocomplete;
+function initAutocomplete(){
+  autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')),
+    {types: ['geocode']});
+
+  autocomplete.addListener('place_changed', clickResult);
+}
+
+function clickResult() {
+  // geocodeAddress(geocoder, map);
+  // geocodeOppAddress(geocoder, oppMap);
+}
+
+google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
 
 $("#address").keypress(function(event) {
   var keycode = (event.keyCode ? event.keyCode : event.which);
   if(keycode == '13'){
     var userInput = $("#address").val();
-    console.log( "Handler for .keypress() called." );
-    console.log(userInput)
     var map = new google.maps.Map(document.getElementById('search-map'), {
       zoom: 7
     });
