@@ -1,3 +1,4 @@
 #search-map, #opp-map {
   height: 100vh;
+  visibility: hidden;
 }
