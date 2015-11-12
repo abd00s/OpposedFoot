@@ -57,7 +57,7 @@ function geocodeOppAddress(geocoder, resultsMap) {
       resultsMap.setCenter({lat: oppAddLat, lng: oppAddLng});
       var marker = new google.maps.Marker({
         map: resultsMap,
-        position: results[0].geometry.location
+        position: {lat: oppAddLat, lng: oppAddLng}
       });
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
