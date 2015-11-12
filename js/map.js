@@ -98,3 +98,7 @@ function deleteMarkers() {
   clearMarkers();
   markers = [];
 }
+
+$(".mdi-navigation-close").click(function(){
+  $("#address").val("");
+})
