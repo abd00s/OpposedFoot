@@ -18,18 +18,18 @@ $("#address").keypress(function(event) {
     console.log( "Handler for .keypress() called." );
     console.log(userInput)
     var map = new google.maps.Map(document.getElementById('search-map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+      zoom: 7
     });
 
     var geocoder = new google.maps.Geocoder();
 
     geocodeAddress(geocoder, map);
 
-    oppMap = new google.maps.Map(document.getElementById('opp-map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+
+    var oppMap = new google.maps.Map(document.getElementById('opp-map'), {
+      zoom: 7
     });
+    geocodeAddress(geocoder, oppMap);
   }
 });
 
